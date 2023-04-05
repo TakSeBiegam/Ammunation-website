@@ -2,7 +2,7 @@ import { ModelTypes } from "@/types/zeus";
 import { useState } from "react";
 import { createContainer } from "unstated-next";
 
-const cartContainer = createContainer(() => {
+const CartContainer = createContainer(() => {
   const [cart, setCart] = useState<ModelTypes["Product"][]>(() => {
     if (typeof localStorage !== "undefined") {
       const savedCart = JSON.parse(localStorage.getItem("Cart") || "[]");
@@ -56,6 +56,6 @@ const cartContainer = createContainer(() => {
   return { cart, setCart, saveCart, changeItemQuantity };
 });
 
-export const useCartContainer = cartContainer.useContainer;
-export const CartProvider = cartContainer.Provider;
+export const useCartContainer = CartContainer.useContainer;
+export const CartProvider = CartContainer.Provider;
 

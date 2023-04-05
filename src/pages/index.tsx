@@ -8,12 +8,12 @@ import Image from 'next/image'
 export default function Home() {
   const images = [
 
-    "images/Sponsors/61d703709f78657796a682fa00716ac4.png",
-    "images/Sponsors/5409.png",
-    "images/Sponsors/Blaine-county-talk-radio-official.webp",
-    "images/Sponsors/LSPD.webp",
-    "images/Sponsors/PiÃ wasser-GTAIV-Logo.webp",
-    "images/Sponsors/RedwoodCigarettes-GTAIV-Logo.webp",
+    "/images/Sponsors/61d703709f78657796a682fa00716ac4.png",
+    "/images/Sponsors/5409.png",
+    "/images/Sponsors/Blaine-county-talk-radio-official.webp",
+    "/images/Sponsors/LSPD.webp",
+    "/images/Sponsors/PiÃ wasser-GTAIV-Logo.webp",
+    "/images/Sponsors/RedwoodCigarettes-GTAIV-Logo.webp",
   ]
 
   return (
@@ -25,7 +25,7 @@ export default function Home() {
       <Navbar />
       <main style={{ marginTop: "2%" }}>
         <div style={{ display: "flex" }}>
-          <Image alt="" className={styles.Image} src="/images/main/obraz_2021-10-13_161401.webp"></Image>
+          <Image alt="" className={styles.Image} src="/images/main/obraz_2021-10-13_161401.webp" width={700} height={350}></Image>
           <div style={{ paddingLeft: 50, marginRight: "10%", alignItems: "center" }}>
             <h1 className={styles.h1}>GUNS FOR EVERY HAND</h1>
             <p className={styles.span}>AmmuNation to firma o bogatym doświadczeniu, która zrodziła się z pasji do strzelnictwa. Jej historia sięga daleko wstecz. W trakcie swoich lat działalności nieustannie wzbogacaliśmy i poprawialiśmy naszą ofertę o nowe produkty i usługi, stale podnosząc przy tym ich jakość.</p>
@@ -40,7 +40,7 @@ export default function Home() {
 
               Nasza firma posiada wysoko wykwalifikowany personel oraz certyfikaty uprawniające do prowadzenia działalności i potwierdzające wysoką jakość usług oraz produktów z naszej oferty. Możemy  również poszczycić się stale rosnącą liczbą stałych Klientów. Obsługujemy m.in. myśliwych, przedstawicieli służb mundurowych, pracowników ochrony, strzelców sportowych.</p>
           </div>
-          <Image alt="" className={styles.locationImage} src="/images/main/obraz_2020-09-28_204517.webp"></Image>
+          <Image alt="" className={styles.locationImage} src="/images/main/obraz_2020-09-28_204517.webp" width={800} height={400}></Image>
         </div>
         <Carousel images={images} />
       </main >
