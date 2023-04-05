@@ -69,7 +69,7 @@ export const items: ModelTypes["Product"][] = [
     },
 ];
 
-export default function () {
+export default function Shop() {
     return (
         <>
             <main className={styles.main}>

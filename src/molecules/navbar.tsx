@@ -30,7 +30,7 @@ export const Navbar = () => {
                 <Link href="/" >Strona Domowa</Link>
                 <Link href="shop">Sklep Online</Link>
                 <Link href="apply">Aplikuj</Link>
-                <Image className={styles.logIn} src="/images/icons/152533.png" alt="Log In" width={20} onClick={() => handleLogInRedirect()} />
+                <Image className={styles.logIn} src="/images/icons/152533.png" alt="Log In" width={20} height={20} onClick={() => handleLogInRedirect()} />
                 <div className={styles.nav_price} onClick={handleShowCart}>
                     <p style={{ marginRight: "5px" }}>🛒</p>
                     <p>{(totalPrice / 100).toLocaleString('en-US', {

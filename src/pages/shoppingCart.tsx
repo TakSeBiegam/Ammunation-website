@@ -1,5 +1,5 @@
 import { useCartContainer } from "@/logic/cart";
-import { cartElements } from "@/molecules/CartElement";
+import { CartElements } from "@/molecules/CartElement";
 import Footer from "@/molecules/footer";
 import { Navbar } from "@/molecules/navbar";
 import { useEffect, useState } from "react";
@@ -24,7 +24,7 @@ const ShoppingCart = () => {
                 <ul >
                     {Cart.cart.map((item) => item && (
                         <li style={{ listStyle: "none" }} key={item.id}>
-                            {cartElements(item)}
+                            {CartElements(item)}
                         </li>))
                     }
                 </ul>

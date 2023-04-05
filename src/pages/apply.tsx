@@ -4,7 +4,7 @@ import { useBackend } from './../graphqlRequest/client'
 import { useRouter } from "next/router";
 import { Navbar } from "@/molecules/navbar";
 
-export default function () {
+export default function Apply() {
     const [firstName, setFirstName] = useState<string>('');
     const [lastName, setLastName] = useState<string>('');
     const [phoneNumber, setPhoneNumber] = useState<string>('');

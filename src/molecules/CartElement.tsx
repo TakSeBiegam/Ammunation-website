@@ -4,7 +4,7 @@ import { useCartContainer } from "@/logic/cart";
 import Image from "next/image";
 
 
-export const cartElements = (item: ModelTypes["Product"]) => {
+export const CartElements = (item: ModelTypes["Product"]) => {
     const { changeItemQuantity } = useCartContainer();
     return (
         <div className={styles.productContainer}>
