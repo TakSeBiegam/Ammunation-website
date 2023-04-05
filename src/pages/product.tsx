@@ -17,7 +17,9 @@ function Product() {
         image: "",
         description: "",
         price: 0,
-        quantity: 0
+        quantity: 0,
+        category: "",
+        bigImage: ""
     });
     useEffect(() => {
         if (productId) {

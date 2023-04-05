@@ -1,10 +1,11 @@
 import { ModelTypes } from '@/types/zeus';
 import styles from './../styles/productContainer.module.css'
+import Image from 'next/image';
 
 export const shopProduct = (item: ModelTypes["Product"], routerChange: (path: string) => void) => {
   return (
     <li className={styles.list_item} key={item.id}>
-      <img className={styles.product_Image} src={item.image} alt={item.name} />
+      <Image className={styles.product_Image} src={item.image} alt={item.name} />
       <h3 className={styles.h3}>{item.name}</h3>
       <p className={styles.price}>{(item.price / 100).toLocaleString('en-US', {
         style: 'currency',

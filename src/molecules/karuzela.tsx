@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Image from 'next/image';
 
 interface CarouselProps {
     images: string[];
@@ -22,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             <Slider {...settings} >
                 {images.map((image) => (
                     <div key={image}>
-                        <img src={image} alt="carousel-image" width={125} height={75} />
+                        <Image src={image} alt="carousel-image" width={125} height={75} />
                     </div>
                 ))}
             </Slider>

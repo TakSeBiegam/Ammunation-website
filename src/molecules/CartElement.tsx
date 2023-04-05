@@ -1,13 +1,14 @@
 import { ModelTypes } from "@/types/zeus";
 import styles from "../styles/cartElement.module.css"
 import { useCartContainer } from "@/logic/cart";
+import Image from "next/image";
 
 
 export const cartElements = (item: ModelTypes["Product"]) => {
     const { changeItemQuantity } = useCartContainer();
     return (
         <div className={styles.productContainer}>
-            <img className={styles.image} src={item.image} alt={item.image}></img>
+            <Image className={styles.image} src={item.image} alt={item.image}></Image>
             <h2 className={styles.title}>{item.name}</h2>
 
             <div className={styles.buttons}>

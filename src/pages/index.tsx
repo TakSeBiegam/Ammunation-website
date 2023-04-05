@@ -3,6 +3,7 @@ import { Navbar } from '@/molecules/navbar'
 import Head from 'next/head'
 import styles from "../styles/index.module.css"
 import Carousel from '@/molecules/karuzela'
+import Image from 'next/image'
 
 export default function Home() {
   const images = [
@@ -24,7 +25,7 @@ export default function Home() {
       <Navbar />
       <main style={{ marginTop: "2%" }}>
         <div style={{ display: "flex" }}>
-          <img className={styles.img} src="/images/main/obraz_2021-10-13_161401.webp"></img>
+          <Image alt="" className={styles.Image} src="/images/main/obraz_2021-10-13_161401.webp"></Image>
           <div style={{ paddingLeft: 50, marginRight: "10%", alignItems: "center" }}>
             <h1 className={styles.h1}>GUNS FOR EVERY HAND</h1>
             <p className={styles.span}>AmmuNation to firma o bogatym doświadczeniu, która zrodziła się z pasji do strzelnictwa. Jej historia sięga daleko wstecz. W trakcie swoich lat działalności nieustannie wzbogacaliśmy i poprawialiśmy naszą ofertę o nowe produkty i usługi, stale podnosząc przy tym ich jakość.</p>
@@ -39,7 +40,7 @@ export default function Home() {
 
               Nasza firma posiada wysoko wykwalifikowany personel oraz certyfikaty uprawniające do prowadzenia działalności i potwierdzające wysoką jakość usług oraz produktów z naszej oferty. Możemy  również poszczycić się stale rosnącą liczbą stałych Klientów. Obsługujemy m.in. myśliwych, przedstawicieli służb mundurowych, pracowników ochrony, strzelców sportowych.</p>
           </div>
-          <img className={styles.locationImg} src="/images/main/obraz_2020-09-28_204517.webp"></img>
+          <Image alt="" className={styles.locationImage} src="/images/main/obraz_2020-09-28_204517.webp"></Image>
         </div>
         <Carousel images={images} />
       </main >

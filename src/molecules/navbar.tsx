@@ -3,6 +3,8 @@ import styles from '../styles/compontents/Navbar.module.css';
 import { useEffect, useState } from "react";
 import { ModelTypes } from "@/types/zeus";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import Image from "next/image";
 
 
 export const Navbar = () => {
@@ -25,11 +27,10 @@ export const Navbar = () => {
     return (
         <div>
             <div className={styles.topnav}>
-                <a href="/">Strona Domowa</a>
-                <a href="shop">Sklep Online</a>
-                {/* <a href="contact">Napisz do nas!</a> */}
-                <a href="apply">Aplikuj</a>
-                <img className={styles.logIn} src="/images/icons/152533.png" width={20} onClick={() => handleLogInRedirect()} />
+                <Link href="/" >Strona Domowa</Link>
+                <Link href="shop">Sklep Online</Link>
+                <Link href="apply">Aplikuj</Link>
+                <Image className={styles.logIn} src="/images/icons/152533.png" alt="Log In" width={20} onClick={() => handleLogInRedirect()} />
                 <div className={styles.nav_price} onClick={handleShowCart}>
                     <p style={{ marginRight: "5px" }}>🛒</p>
                     <p>{(totalPrice / 100).toLocaleString('en-US', {

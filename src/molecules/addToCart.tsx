@@ -13,9 +13,7 @@ const AddToCart: React.FC<AddToCartProps> = ({ item }) => {
         if (item.quantity !== 0) {
             saveCart([{ ...item, quantity: quantity }]);
         }
-
     }
-
 
     return (
         <div style={{ display: "Flex" }}>

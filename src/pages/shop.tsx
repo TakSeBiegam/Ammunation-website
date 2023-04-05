@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Footer from '@/molecules/footer';
 import FilterableProductList from '@/molecules/sidebarShop';
 import { ModelTypes } from '@/types/zeus';
+import Image from 'next/image';
 export const items: ModelTypes["Product"][] = [
     {
         id: "1",
@@ -73,7 +74,7 @@ export default function () {
         <>
             <main className={styles.main}>
                 <Navbar />
-                <img style={{ marginTop: "2%", display: "block", marginLeft: "auto", marginRight: "auto", width: "55%" }} src="/images/Sponsors/banner.png" />
+                <Image style={{ marginTop: "2%", display: "block", marginLeft: "auto", marginRight: "auto", width: "55%" }} src="/images/Sponsors/banner.png" alt="" />
                 <div style={{ width: "80%" }}>
                     <FilterableProductList products={items} />
                 </div>

@@ -1,13 +1,14 @@
 import { ModelTypes } from "@/types/zeus"
 import styles from "../../styles/compontents/productDescription.module.css"
 import AddToCart from "../addToCart"
+import Image from "next/image"
 
 export const ProductDescription = ({ item }: { item: ModelTypes["Product"] }) => {
 
     return (
         <div className={styles.Container}>
             <div style={{ display: "flex" }}>
-                <img className={styles.image} src={item.image} alt={item.name} />
+                <Image className={styles.image} src={item.image} alt={item.name} />
                 <div style={{ marginLeft: "5%" }}>
                     <h1>{item.name}</h1>
                     <span className={styles.price}>{(item.price / 100).toLocaleString('en-US', {
