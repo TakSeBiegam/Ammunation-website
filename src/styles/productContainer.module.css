@@ -1,0 +1,43 @@
+.list_item {
+    margin-top: 10%;
+    list-style: none;
+    width: 80%;
+    padding: 10px;
+    height: 200px;
+    background-color: #e5e5e5;
+}
+
+
+.product_Image {
+    height: 40%;
+    width: 100%;
+}
+
+.h3 {
+    overflow: hidden;
+    display: -webkit-box;
+    /* font-size: 30px; */
+    font-size: 130%;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.price {
+    margin-top: -10%;
+}
+
+.buyButton {
+    background-color: #1184c2;
+    border: transparent;
+    font-size: medium;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.buyButton:hover {
+    background-color: #04a7ff;
+    border: transparent;
+    font-size: medium;
+    width: 80%;
+    margin-left: 10%;
+}

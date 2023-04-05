@@ -6,17 +6,39 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "zeus": "zeus http://localhost:8080/graphql ./src/types --ts ",
+    "dev-watch": "NODE_OPTIONS='--inspect' next dev"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^8.5.1",
     "@types/node": "18.14.6",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "dotenv": "^16.0.3",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
+    "graphql-editor-cli": "^0.7.9",
+    "graphql-request": "^5.2.0",
+    "graphql-zeus": "^5.2.9",
+    "jsonwebtoken": "^8.5.1",
     "next": "13.2.3",
-    "react": "18.2.0",
+    "next-images": "^1.8.4",
+    "react": "^18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "react-range": "^1.8.14",
+    "react-scrollbars-custom": "^4.1.1",
+    "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.1",
+    "reactjs-popup": "^2.0.5",
+    "recharts": "^2.5.0",
+    "slick-carousel": "^1.8.1",
+    "typescript": "4.9.5",
+    "unstated-next": "^1.1.0",
+    "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/react-datepicker": "^4.10.0",
+    "@types/react-slick": "^0.23.10"
   }
 }

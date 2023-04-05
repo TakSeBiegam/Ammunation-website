@@ -1,0 +1,28 @@
+.Container {
+    border: black;
+    border-radius: 1px;
+    border-style: solid;
+    flex-grow: 1;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-color: #fcfcfc;
+}
+
+.btn:active {
+    border: none;
+    outline: none;
+    background-color: #00aacc;
+}
+
+.btn:hover {
+    border: none;
+    outline: none;
+    background-color: #88aacc;
+}
+
+.number_allign_right {
+    padding-left: 75%;
+}

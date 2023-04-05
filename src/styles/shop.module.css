@@ -1,0 +1,6 @@
+.centerContainer {
+    margin: auto;
+    background-color: #818181;
+    max-width: 70%;
+    box-shadow: 1px 1px 3px #000000;
+}

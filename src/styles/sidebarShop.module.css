@@ -1,0 +1,6 @@
+.productsContainer {
+    display: grid;
+    width: 72.5%;
+    margin-left: auto;
+    grid-template-columns: repeat(4, 1fr);
+}

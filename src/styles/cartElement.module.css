@@ -1,0 +1,32 @@
+.productContainer {
+    display: flex;
+    width: 80%;
+    margin: "auto";
+    max-height: 20%;
+    min-width: 100%;
+}
+
+.title {
+    margin: auto;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+}
+
+.image {
+    margin-top: auto;
+    height: 80px;
+    width: 150px
+}
+
+.price {
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.buttons {
+    margin: auto;
+    display: flex;
+}
