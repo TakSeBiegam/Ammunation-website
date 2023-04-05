@@ -4,10 +4,11 @@ const nextConfig = {
     return [
       {
         source: '/images/:path*',
-        destination: '/public/images/:path*',
+        destination: 'https://raw.githubusercontent.com/TakSeBiegam/Ammunation-website/main/images/:path*',
       },
     ];
   },
+  
   reactStrictMode: true,
 }
 
