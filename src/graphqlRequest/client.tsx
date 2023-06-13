@@ -25,12 +25,12 @@ export const useBackend = () => {
         }
         );
     };
-    const findProduct = async (productId: string) => {
+    const listProducts = async () => {
         const response = await chain('query')({
-            findProduct: [
+            listProducts: [
                 {
-                    id: productId,
-                }, {
+			limit: 100
+		}, {
                     id: true,
                     name: true,
                     description: true,
@@ -44,10 +44,34 @@ export const useBackend = () => {
         if (!response)
             throw new Error('Invalid response from backend ContactForm');
         return response;
-    }
+    };
+const findProduct = async (productId: string) => {
+  const response = await chain('query')({
+    findProduct: [
+      {
+        id: productId,
+      },
+      {
+        id: true,
+        name: true,
+        description: true,
+        image: true,
+        price: true,
+        quantity: true,
+      }
+    ],
+  });
+
+  if (!response) {
+    throw new Error('Invalid response from backend ContactForm');
+  }
+
+  return response;
+};
     return {
         applyForm,
-        findProduct
+        listProducts,
+	findProduct
     };
 
 }
