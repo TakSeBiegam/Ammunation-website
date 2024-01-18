@@ -1,40 +1,40 @@
 .background {
-    padding: 0;
-    margin: 0;
-    background: #1e1e1e;
-    min-height: 100vh;
-    display: flex;
-    color: #F3F1EF;
-    justify-content: center;
-    align-items: center;
+  padding: 0;
+  margin: 0;
+  background: #aed3cd;
+  min-height: 100vh;
+  display: flex;
+  color: #f3f1ef;
+  justify-content: center;
+  align-items: center;
 }
 
 .block {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .container {
-    font-size: 1.3rem;
-    border-radius: 10px;
-    width: 85%;
-    padding: 50px;
-    box-shadow: 0 54px 55px rgb(78 78 78 / 25%), 0 -12px 30px rgb(78 78 78 / 25%),
-        0 4px 6px rgb(78 78 78 / 25%), 0 12px 13px rgb(78 78 78 / 25%),
-        0 -3px 5px rgb(78 78 78 / 25%);
+  font-size: 1.3rem;
+  border-radius: 10px;
+  width: 85%;
+  padding: 50px;
+  box-shadow: 0 54px 55px rgb(78 78 78 / 25%), 0 -12px 30px rgb(78 78 78 / 25%),
+    0 4px 6px rgb(78 78 78 / 25%), 0 12px 13px rgb(78 78 78 / 25%),
+    0 -3px 5px rgb(78 78 78 / 25%);
 }
 
 .container input {
-    font-size: 1.2rem;
-    margin: 10px 0 10px 0px;
-    border-color: rgb(31, 28, 28);
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #e8f0fe;
+  font-size: 1.2rem;
+  margin: 10px 0 10px 0px;
+  border-color: rgb(31, 28, 28);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e8f0fe;
 }

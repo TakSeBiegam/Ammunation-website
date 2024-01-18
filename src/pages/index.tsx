@@ -1,20 +1,279 @@
-import Footer from '@/molecules/footer'
-import { Navbar } from '@/molecules/navbar'
-import Head from 'next/head'
-import styles from "../styles/index.module.css"
-import Carousel from '@/molecules/karuzela'
-import Image from 'next/image'
+import Footer from "@/molecules/footer";
+import { Navbar } from "@/molecules/navbar";
+import Head from "next/head";
+import styles from "../styles/index.module.css";
+import Carousel from "@/molecules/karuzela";
+import Image from "next/image";
+
+const FiveBoxesCentered: React.FC = () => {
+  const items = [
+    { text: "Róże", image: "/images/categories/1.png" },
+    { text: "Lilie", image: "/images/categories/2.png" },
+    { text: "Tulipany", image: "/images/categories/3.png" },
+    { text: "Stokrotki", image: "/images/categories/4.png" },
+    { text: "Orchidee", image: "/images/categories/5.png" },
+    { text: "Słoneczniki", image: "/images/categories/6.png" },
+  ];
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "75%",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        {items.map((item, index) => (
+          <div
+            key={index}
+            style={{
+              width: "200px",
+              height: "200px",
+              backgroundColor: "white",
+              border: "1px solid #ccc",
+              margin: "0 10px",
+              borderRadius: "16px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              fontFamily: "fantasy",
+            }}
+          >
+            <span
+              style={{
+                marginTop: "20%",
+                marginBottom: "5px",
+                fontWeight: "bold",
+                fontSize: "1.3rem",
+              }}
+            >
+              {item.text}
+            </span>
+            {/* Content for each box */}
+            <img
+              src={item.image}
+              alt={item.text}
+              style={{ width: "60%", height: "auto", borderRadius: "8px" }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const SearchingBelow: React.FC = () => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "75%",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div
+          style={{
+            width: "15vw",
+            height: "5vh",
+            backgroundColor: "white",
+            border: "1px solid #ccc",
+            margin: "0 10px",
+            borderRadius: "16px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <p
+            style={{
+              paddingRight: "4vw",
+              marginTop: "1.4vh",
+              fontSize: "1.3rem",
+              fontFamily: "fantasy",
+              fontWeight: "bold",
+            }}
+          >
+            Special Offerts
+          </p>
+        </div>
+        <div
+          style={{
+            width: "40vw",
+            height: "5vh",
+            backgroundColor: "white",
+            border: "1px solid #ccc",
+            margin: "0 10px",
+            borderRadius: "16px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <p
+            style={{
+              paddingRight: "30vw",
+              marginTop: "1.4vh",
+              fontSize: "1.3rem",
+              fontFamily: "fantasy",
+              fontWeight: "bold",
+            }}
+          >
+            Trendings
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const TrendingBoxes: React.FC = () => {
+  const items = [
+    { text: "Kwiaty ślubne", image: "/images/trendings/weeding.png" },
+    { text: "Dostarcz Kwiaty", image: "/images/trendings/podarunek.png" },
+    { text: "Dekorowanie", image: "/images/trendings/dekoracje.png" },
+    { text: "Kwiaty ślubne", image: "/images/trendings/weeding.png" },
+    { text: "Dostarcz Kwiaty", image: "/images/trendings/podarunek.png" },
+    { text: "Dekorowanie", image: "/images/trendings/dekoracje.png" },
+  ];
+
+  // Group items in sets of three
+  const groupedItems = [];
+  for (let i = 0; i < items.length; i += 3) {
+    groupedItems.push(items.slice(i, i + 3));
+  }
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        paddingRight: "19%",
+      }}
+    >
+      {groupedItems.map((group, groupIndex) => (
+        <div key={groupIndex} style={{ display: "flex", marginBottom: "6%" }}>
+          {group.map((item, index) => (
+            <div
+              key={index}
+              style={{
+                marginLeft: index > 0 ? "1.5%" : "0", // Add margin only for items after the first one
+                width: "300px",
+                height: "200px",
+                backgroundColor: "white",
+                border: "1px solid #ccc",
+                borderRadius: "16px",
+                flexDirection: "column",
+                alignItems: "center",
+                fontFamily: "fantasy",
+              }}
+            >
+              <img
+                src={item.image}
+                style={{
+                  objectFit: "cover",
+                  maxWidth: "100%",
+                  width: "100%",
+                  maxHeight: "70%",
+                  height: "auto",
+                  borderRadius: "8px",
+                  paddingBottom: "10px",
+                }}
+              />
+              <div
+                style={{
+                  display: "flex",
+                  paddingRight: "5%",
+                  marginBottom: "6%",
+                }}
+              >
+                <span
+                  style={{
+                    width: "100%",
+                    textAlign: "left",
+                    fontWeight: "bold",
+                    marginLeft: "3%",
+                    margin: "0 40px",
+                  }}
+                >
+                  {item.text}
+                </span>
+                <div
+                  style={{
+                    backgroundColor: "#fa9c1b",
+                    width: "200px",
+                    height: "25px",
+                    borderRadius: "5px",
+                    textAlign: "center",
+                  }}
+                >
+                  <span style={{ fontFamily: "Segoe UI" }}>Sprawdź</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const SearchingBelowPartTwo: React.FC = () => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: "17%",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div
+          style={{
+            width: "15vw",
+            height: "30vh",
+            backgroundColor: "white",
+            border: "1px solid #ccc",
+            margin: "0 10px",
+            borderRadius: "16px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        ></div>
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
   const images = [
-
-    "/images/Sponsors/61d703709f78657796a682fa00716ac4.png",
-    "/images/Sponsors/5409.png",
-    "/images/Sponsors/Blaine-county-talk-radio-official.webp",
-    "/images/Sponsors/LSPD.webp",
-    "/images/Sponsors/PiÃ wasser-GTAIV-Logo.webp",
-    "/images/Sponsors/RedwoodCigarettes-GTAIV-Logo.webp",
-  ]
+    "/images/Sponsors/b3043c_49abee31eb5d4b7fbeded024ad2f1a8f.webp",
+    "/images/Sponsors/Bevolo-Logo-.-VECTOR-file-2.png",
+    "/images/Sponsors/Logo-Naturella.png",
+    "/images/Sponsors/Screen_Shot_2019-04-07_at_8.30.29_PM_1024x1024.webp",
+    "/images/Sponsors/calflowerslogo-b-alt_.jpg",
+    "/images/Sponsors/Image-empty-state.webp",
+  ];
 
   return (
     <>
@@ -24,27 +283,85 @@ export default function Home() {
       </Head>
       <Navbar />
       <main style={{ marginTop: "2%" }}>
-        <div style={{ display: "flex" }}>
-          <Image alt="" className={styles.Image} src="/images/main/obraz_2021-10-13_161401.webp" width={700} height={350}></Image>
-          <div style={{ paddingLeft: 50, marginRight: "10%", alignItems: "center" }}>
-            <h1 className={styles.h1}>GUNS FOR EVERY HAND</h1>
-            <p className={styles.span}>AmmuNation to firma o bogatym doświadczeniu, która zrodziła się z pasji do strzelnictwa. Jej historia sięga daleko wstecz. W trakcie swoich lat działalności nieustannie wzbogacaliśmy i poprawialiśmy naszą ofertę o nowe produkty i usługi, stale podnosząc przy tym ich jakość.</p>
+        <div style={{ display: "flex", marginTop: 120 }}>
+          <div
+            style={{
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                marginLeft: "23vw",
+                marginTop: "15vh",
+                width: "25vw",
+                fontFamily: "fantasy",
+              }}
+            >
+              <h1 className={styles.h1}>
+                Znajdź idealne kwiaty na każdą okazje
+              </h1>
+              <p className={styles.span}>
+                FlowerNation to firma kwiatowa o bogatym doświadczeniu, która
+                zrodziła się z pasji do kwiatów.
+              </p>
+            </div>
           </div>
+          <Image
+            alt=""
+            className={styles.Image}
+            src="/images/icons/budynek.jpg"
+            width={600}
+            height={600}
+          ></Image>
         </div>
-        <div style={{ display: "flex", marginTop: "3%", marginLeft: "10%" }}>
-          <div style={{ marginRight: "7%" }}>
-            <h2 className={styles.find} >Find Us!</h2>
-            <p className={styles.span}>Jesteśmy solidnym i profesjonalnym partnerem w zakresie strzelectwa. W naszych sklepach posiadamy wiele produktów wysokiej klasy od renomowanych producentów, poczynając od broni i optyki, przez amunicję oraz części, aż po ubrania oraz sprzęt militarny
 
-              W naszych specjalnościach mogą Państwo znaleźć również szkolenia dla wszystkich miłośników broni, dysponujemy także profesjonalną strzelnicą.
-
-              Nasza firma posiada wysoko wykwalifikowany personel oraz certyfikaty uprawniające do prowadzenia działalności i potwierdzające wysoką jakość usług oraz produktów z naszej oferty. Możemy  również poszczycić się stale rosnącą liczbą stałych Klientów. Obsługujemy m.in. myśliwych, przedstawicieli służb mundurowych, pracowników ochrony, strzelców sportowych.</p>
+        <p
+          style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}
+        >
+          Kategorie
+        </p>
+        <div>
+          <FiveBoxesCentered />
+        </div>
+        <div style={{ marginTop: "15vh" }}>
+          <SearchingBelow />
+        </div>
+        <div
+          style={{
+            marginTop: "3vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              width: "15vw",
+              height: "30vh",
+              marginLeft: "17.5%",
+              marginBottom: "3.5%",
+              backgroundColor: "white",
+              border: "1px solid #ccc",
+              margin: "5px 40px",
+              borderRadius: "16px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={"/images/sale/11.png"}
+              alt={"Przecena"}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "8px",
+              }}
+            />
           </div>
-          <Image alt="" className={styles.locationImage} src="/images/main/obraz_2020-09-28_204517.webp" width={800} height={400}></Image>
+          <TrendingBoxes />
         </div>
-        <Carousel images={images} />
-      </main >
+      </main>
       <Footer />
     </>
-  )
+  );
 }

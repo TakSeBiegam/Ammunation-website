@@ -1,9 +1,6 @@
 /* eslint-disable */
 
 export const AllTypesProps: Record<string,any> = {
-	ApplyFormInput:{
-
-	},
 	Mutation:{
 		ApplyForm:{
 			data:"ApplyFormInput"
@@ -13,6 +10,9 @@ export const AllTypesProps: Record<string,any> = {
 		findProduct:{
 
 		}
+	},
+	ApplyFormInput:{
+
 	}
 }
 
