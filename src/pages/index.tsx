@@ -70,72 +70,55 @@ const FiveBoxesCentered: React.FC = () => {
 
 const SearchingBelow: React.FC = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <>
       <div
         style={{
-          maxWidth: "75%",
+          height: "5vh",
+          backgroundColor: "white",
+          border: "1px solid #ccc",
+          borderRadius: "16px",
           display: "flex",
-          justifyContent: "space-between",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <div
+        <p
           style={{
-            width: "15vw",
-            height: "5vh",
-            backgroundColor: "white",
-            border: "1px solid #ccc",
-            margin: "0 10px",
-            borderRadius: "16px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            paddingRight: "4vw",
+            marginTop: "1.4vh",
+            fontSize: "1.3rem",
+            fontFamily: "fantasy",
+            fontWeight: "bold",
           }}
         >
-          <p
-            style={{
-              paddingRight: "4vw",
-              marginTop: "1.4vh",
-              fontSize: "1.3rem",
-              fontFamily: "fantasy",
-              fontWeight: "bold",
-            }}
-          >
-            Special Offerts
-          </p>
-        </div>
-        <div
-          style={{
-            width: "40vw",
-            height: "5vh",
-            backgroundColor: "white",
-            border: "1px solid #ccc",
-            margin: "0 10px",
-            borderRadius: "16px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <p
-            style={{
-              paddingRight: "30vw",
-              marginTop: "1.4vh",
-              fontSize: "1.3rem",
-              fontFamily: "fantasy",
-              fontWeight: "bold",
-            }}
-          >
-            Trendings
-          </p>
-        </div>
+          Special Offerts
+        </p>
       </div>
-    </div>
+      <div
+        style={{
+          height: "5vh",
+          backgroundColor: "white",
+          border: "1px solid #ccc",
+
+          borderRadius: "16px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <p
+          style={{
+            paddingRight: "30vw",
+            marginTop: "1.4vh",
+            fontSize: "1.3rem",
+            fontFamily: "fantasy",
+            fontWeight: "bold",
+          }}
+        >
+          Trendings
+        </p>
+      </div>
+    </>
   );
 };
 
@@ -144,123 +127,138 @@ const TrendingBoxes: React.FC = () => {
     { text: "Kwiaty ślubne", image: "/images/trendings/weeding.png" },
     { text: "Dostarcz Kwiaty", image: "/images/trendings/podarunek.png" },
     { text: "Dekorowanie", image: "/images/trendings/dekoracje.png" },
-    { text: "Kwiaty ślubne", image: "/images/trendings/weeding.png" },
+    { text: "Kwiaty urodzinowe", image: "/images/trendings/weeding.png" },
     { text: "Dostarcz Kwiaty", image: "/images/trendings/podarunek.png" },
     { text: "Dekorowanie", image: "/images/trendings/dekoracje.png" },
   ];
 
   // Group items in sets of three
-  const groupedItems = [];
-  for (let i = 0; i < items.length; i += 3) {
-    groupedItems.push(items.slice(i, i + 3));
-  }
 
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        paddingRight: "19%",
-      }}
-    >
-      {groupedItems.map((group, groupIndex) => (
-        <div key={groupIndex} style={{ display: "flex", marginBottom: "6%" }}>
-          {group.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                marginLeft: index > 0 ? "1.5%" : "0", // Add margin only for items after the first one
-                width: "300px",
-                height: "200px",
-                backgroundColor: "white",
-                border: "1px solid #ccc",
-                borderRadius: "16px",
-                flexDirection: "column",
-                alignItems: "center",
-                fontFamily: "fantasy",
-              }}
-            >
-              <img
-                src={item.image}
-                style={{
-                  objectFit: "cover",
-                  maxWidth: "100%",
-                  width: "100%",
-                  maxHeight: "70%",
-                  height: "auto",
-                  borderRadius: "8px",
-                  paddingBottom: "10px",
-                }}
-              />
-              <div
-                style={{
-                  display: "flex",
-                  paddingRight: "5%",
-                  marginBottom: "6%",
-                }}
-              >
-                <span
-                  style={{
-                    width: "100%",
-                    textAlign: "left",
-                    fontWeight: "bold",
-                    marginLeft: "3%",
-                    margin: "0 40px",
-                  }}
-                >
-                  {item.text}
-                </span>
-                <div
-                  style={{
-                    backgroundColor: "#fa9c1b",
-                    width: "200px",
-                    height: "25px",
-                    borderRadius: "5px",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={{ fontFamily: "Segoe UI" }}>Sprawdź</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-};
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr 1fr",
 
-const SearchingBelowPartTwo: React.FC = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        marginLeft: "17%",
+        gap: "2rem",
       }}
     >
-      <div
-        style={{
-          maxWidth: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      {items.map(({ image, text }, groupIndex) => (
         <div
+          key={groupIndex}
           style={{
-            width: "15vw",
-            height: "30vh",
+            // width: "300px",
+            height: "300px",
             backgroundColor: "white",
             border: "1px solid #ccc",
-            margin: "0 10px",
             borderRadius: "16px",
-            display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            fontFamily: "fantasy",
           }}
-        ></div>
-      </div>
+        >
+          <img
+            src={image}
+            style={{
+              objectFit: "cover",
+              maxWidth: "100%",
+              width: "100%",
+              maxHeight: "70%",
+              height: "auto",
+              borderRadius: "8px",
+              paddingBottom: "10px",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              paddingRight: "5%",
+              marginBottom: "6%",
+            }}
+          >
+            <span
+              style={{
+                width: "100%",
+                textAlign: "left",
+                fontWeight: "bold",
+                marginLeft: "3%",
+                margin: "0 40px",
+              }}
+            >
+              {text}
+            </span>
+            <div
+              style={{
+                backgroundColor: "#fa9c1b",
+                width: "200px",
+                height: "25px",
+                borderRadius: "5px",
+                textAlign: "center",
+              }}
+            >
+              <span style={{ fontFamily: "Segoe UI" }}>Sprawdź</span>
+            </div>
+          </div>
+        </div>
+      ))}
+      {items.map(({ image, text }, groupIndex) => (
+        <div
+          key={groupIndex}
+          style={{
+            // width: "300px",
+            height: "300px",
+            backgroundColor: "white",
+            border: "1px solid #ccc",
+            borderRadius: "16px",
+            flexDirection: "column",
+            alignItems: "center",
+            fontFamily: "fantasy",
+          }}
+        >
+          <img
+            src={image}
+            style={{
+              objectFit: "cover",
+              maxWidth: "100%",
+              width: "100%",
+              maxHeight: "70%",
+              height: "auto",
+              borderRadius: "8px",
+              paddingBottom: "10px",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              paddingRight: "5%",
+              marginBottom: "6%",
+            }}
+          >
+            <span
+              style={{
+                width: "100%",
+                textAlign: "left",
+                fontWeight: "bold",
+                marginLeft: "3%",
+                margin: "0 40px",
+              }}
+            >
+              {text}
+            </span>
+            <div
+              style={{
+                backgroundColor: "#fa9c1b",
+                width: "200px",
+                height: "25px",
+                borderRadius: "5px",
+                textAlign: "center",
+              }}
+            >
+              <span style={{ fontFamily: "Segoe UI" }}>Sprawdź</span>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
@@ -282,7 +280,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main style={{ marginTop: "2%" }}>
+      <main className={styles.container}>
         <div style={{ display: "flex", marginTop: 120 }}>
           <div
             style={{
@@ -291,9 +289,6 @@ export default function Home() {
           >
             <div
               style={{
-                marginLeft: "23vw",
-                marginTop: "15vh",
-                width: "25vw",
                 fontFamily: "fantasy",
               }}
             >
@@ -323,23 +318,51 @@ export default function Home() {
         <div>
           <FiveBoxesCentered />
         </div>
-        <div style={{ marginTop: "15vh" }}>
-          <SearchingBelow />
-        </div>
         <div
           style={{
-            marginTop: "3vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            display: "grid",
+            gridTemplateColumns: "auto 1fr",
+            gap: "4rem",
           }}
         >
+          <SearchingBelow />
           <div
             style={{
-              width: "15vw",
+              width: "100%",
+              height: "100%",
+              // backgroundColor: "white",
+              border: "1px solid #ccc",
+
+              borderRadius: "16px",
+              // display: "flex",
+              // alignItems: "center",
+            }}
+          >
+            <img
+              src={"/images/sale/11.png"}
+              alt={"Przecena"}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "8px",
+              }}
+            />
+          </div>
+          <TrendingBoxes />
+        </div>
+        {/* <div
+          style={{
+            marginTop: "15vh",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+
+            marginInline: "auto",
+          }}
+        >
+        
+          <div
+            style={{
               height: "30vh",
-              marginLeft: "17.5%",
-              marginBottom: "3.5%",
               backgroundColor: "white",
               border: "1px solid #ccc",
               margin: "5px 40px",
@@ -358,9 +381,11 @@ export default function Home() {
               }}
             />
           </div>
+
           <TrendingBoxes />
-        </div>
+        </div> */}
       </main>
+      <hr></hr>
       <Footer />
     </>
   );
